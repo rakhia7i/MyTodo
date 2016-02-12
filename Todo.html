@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="todoApp">
+	<head>
+		<title>My Todo App</title>
+		<meta charset="utf-8">
+        <script src="angular.js"></script>
+        <script src ="Todo.js"></script>
+        <style>
+            body {
+                font-family: "Verdana, Geneva, Tahoma, sans-serif";
+                font-size:15px;
+            }
+        </style>
+	</head>
+    
+    
+    <body ng-controller="todoController">
+    <h1>My ToDo Application</h1>
+    <div style="padding-bottom:10px;">
+        <button ng-click="deleteSelectedItems()" ng-show="arrItems.length >0" style="margin-left:50px;">Delete Selected Items</button>
+        <button ng-click="deleteAllItems()" ng-show="arrItems.length >0" style="margin-left:100px;">Delete All</button>
+    </div>
+    
+    <div ng-repeat="task in arrItems">
+        <div style="float:left; width:40px;">      
+            <input type="checkbox" ng-click="setItemToDelete($index)"></input>
+            {{$index+1}}.
+        </div>
+        <div style="float:left; width:200px;">{{task}}</div>
+        <a href= "#" ng-click="deleteItemFn($index)">Delete</a>
+     </div>   
+    
+        <div style="margin-bottom:10px; margin-top:10px;">
+            <input ng-model="taskItem"></input>
+           <button ng-click="addItemFn()">Add Task</button>
+           
+               
+       </div>  
+     </body>
+    
+ </html>
