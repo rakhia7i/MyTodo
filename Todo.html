@@ -10,6 +10,15 @@
                 font-family: "Verdana, Geneva, Tahoma, sans-serif";
                 font-size:15px;
             }
+			tr:nth-child(even) {
+				background-color: #efefef;
+			}
+			table {
+				border-spacing: 0px;
+			}
+			td {
+				padding: 2px;
+			}
         </style>
 	</head>
     
@@ -21,13 +30,17 @@
         <button ng-click="deleteAllItems()" ng-show="arrItems.length >0" style="margin-left:100px;">Delete All</button>
     </div>
     
-    <div ng-repeat="task in arrItems">
-        <div style="float:left; width:40px;">      
+    <div name="container">
+		<table>
+		<tr ng-repeat="task in arrItems" name="taskRowDiv">
+        <td name="taskNumDiv" style="width:40px;">      
             <input type="checkbox" ng-click="setItemToDelete($index)"></input>
-            {{$index+1}}.
-        </div>
-        <div style="float:left; width:200px;">{{task}}</div>
-        <a href= "#" ng-click="deleteItemFn($index)">Delete</a>
+            {{$index+1}}. 
+        </td>
+        <td name="taskDiv" style="width:300px;">{{task}}</td>
+        <td name="deleteLinkDiv" style="width:100px;"><a href= "#" ng-click="deleteItemFn($index)">Delete</a></td>
+		</tr>
+		</table>
      </div>   
     
         <div style="margin-bottom:10px; margin-top:10px;">

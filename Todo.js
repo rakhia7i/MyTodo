@@ -5,7 +5,6 @@ function todoFn($scope){
      $scope.arrItems = [];
      $scope.setToDelete = [];
 
-
     $scope.addItemFn = function (){
        if($scope.arrItems.indexOf($scope.taskItem) > -1) {
              alert("This task already exists. Please add another task.");
