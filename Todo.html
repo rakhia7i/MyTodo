@@ -32,7 +32,7 @@
     
     <div name="container">
 		<table>
-		<tr ng-repeat="task in arrItems" name="taskRowDiv">
+		<tr ng-repeat="task in arrItems track by $index" name="taskRowDiv">
         <td name="taskNumDiv" style="width:40px;">      
             <input type="checkbox" ng-click="setItemToDelete($index)"></input>
             {{$index+1}}. 

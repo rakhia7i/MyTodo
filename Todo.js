@@ -6,11 +6,13 @@ function todoFn($scope){
      $scope.setToDelete = [];
 
     $scope.addItemFn = function (){
+       /* this code is not longer required as  track by is taking care of duplicates
        if($scope.arrItems.indexOf($scope.taskItem) > -1) {
-             alert("This task already exists. Please add another task.");
+            alert("This task already exists. Please add another task.");
              $scope.taskItem = '';
            return;
        }
+       */
         $scope.arrItems.push($scope.taskItem);
         $scope.taskItem = '';
         $scope.setToDelete.push(false);
